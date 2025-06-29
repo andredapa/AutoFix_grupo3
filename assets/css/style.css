@@ -1,0 +1,39 @@
+body {
+        font-family: 'Inter', sans-serif;
+        margin: 20px;
+        background-color: #fff;
+        color: #000;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-top: 40px;
+        margin-left: 370px;
+    }
+
+    .servicios {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        width: 200px;
+        text-align:left;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+    }
