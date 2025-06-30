@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>AutoFix</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFix - Reparación de Vehículos a Domicilio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <h1>AutoFix-Reparación de Vehículos a Domicilio</h1>
     <h3>Servicios y Precios</h3>
@@ -23,8 +25,39 @@
             <p><strong>Diagnóstico eléctrico</strong><br>Precio: $600 MXN</p>
         </div>
     </div>
-<div class="citas-section">
-  <h2>Sistema para Programar Citas</h2>
+  <!--Formulario-->
+  <h2>Solicitar Reparación</h2>
+
+  <div class="formulario">
+    <form id="form-reparacion">
+      <div class="campo">
+        <label for="nombre">Nombre del Cliente</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+      </div>
+
+      <div class="campo">
+        <label for="tipo">Tipo de Reparación</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecciona un servicio</option>
+          <option value="cambio-aceite">Cambio de aceite</option>
+          <option value="revision-frenos">Revisión de frenos</option>
+          <option value="diagnostico-electrico">Diagnóstico eléctrico</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="descripcion">Descripción del problema</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Describe el problema o los síntomas del vehículo"
+          required></textarea>
+      </div>
+
+      <button type="submit" class="boton">Enviar Solicitud</button>
+    </form>
+  </div>
+  <!--Aquí termina el formulario-->
+
+  <div class="citas-section">
+    <h2>Sistema para Programar Citas</h2>
 
   <div class="fecha-hora">
     <div class="campo">
@@ -76,11 +109,10 @@
   <button class="boton">Confirmar Cita</button>
 </div>
 
-<h2>Información de Pago (simulado)</h2>
-<div class="formulario">
- Aqui va el form de pago
-</div>
-
-
+  <h2>Información de Pago (simulado)</h2>
+  <div class="formulario">
+    Aqui va el form de pago
+  </div>
 </body>
+
 </html>
