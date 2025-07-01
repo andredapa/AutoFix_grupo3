@@ -2,73 +2,172 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoFix - Reparación de Vehículos a Domicilio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoFix – Reparación de Vehículos a Domicilio</title>
+
+  <!-- 1) Bootstrap CSS para grid, tipografía y componentes -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- 2) Estilos personalizados mínimos -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<h1>AutoFix - Reparación de Vehículos a Domicilio</h1>
 
-<h2>Servicios y Precios</h2>
-<div class="servicios">
- <h1>Aqui van los servicios</h1>
-</div>
-<div class="citas-section">
-  <h2>Sistema para Programar Citas</h2>
-
-  <div class="fecha-hora">
-    <div class="campo">
-      <label>Fecha Preferida</label>
-      <input type="date" id="fecha-cita">
+  <!-- ============================
+       HEADER PRINCIPAL
+       ============================ -->
+  <header class="bg-primary text-white text-center py-4 mb-5">
+    <div class="container">
+      <h1 class="h2 mb-1">AutoFix - Grupo 3</h1>
+      <p class="lead mb-0">Reparación de Vehículos a Domicilio</p>
     </div>
-    <div class="campo">
-      <label>Turno Preferido</label>
-      <select id="turno">
-        <option value="">Seleccione un turno</option>
-        <option value="mañana">Mañana (8:00 - 12:00)</option>
-        <option value="tarde">Tarde (13:00 - 17:00)</option>
-        <option value="noche">Noche (18:00 - 20:00)</option>
-      </select>
-    </div>
-  </div>
+  </header>
 
-  <div class="campo">
-    <label>Horarios Disponibles</label>
-    <div class="horarios-disponibles" id="horarios">
-      <div class="horario-slot" data-hora="08:00">08:00</div>
-      <div class="horario-slot" data-hora="09:00">09:00</div>
-      <div class="horario-slot" data-hora="10:00">10:00</div>
-      <div class="horario-slot" data-hora="11:00">11:00</div>
-      <div class="horario-slot" data-hora="13:00">13:00</div>
-      <div class="horario-slot" data-hora="14:00">14:00</div>
-      <div class="horario-slot" data-hora="15:00">15:00</div>
-      <div class="horario-slot" data-hora="16:00">16:00</div>
-      <div class="horario-slot" data-hora="18:00">18:00</div>
-      <div class="horario-slot" data-hora="19:00">19:00</div>
-    </div>
-  </div>
+  <main class="container">
 
-  <div class="campo">
-    <label>Dirección para el Servicio</label>
-    <input type="text" placeholder="Ingrese la dirección donde se realizará el servicio">
-  </div>
+    <!-- ============================
+         SECCIÓN 1: SERVICIOS
+         ============================ -->
+    <section id="servicios" class="mb-5">
+      <h2 class="h4 mb-4 border-bottom pb-2">Servicios y Precios</h2>
+      <div class="row g-4">
+        <!-- TARJETA DE EJEMPLO -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Cambio de Aceite</h5>
+              <p class="card-text">Filtro + hasta 5 L de aceite sintético.</p>
+              <p class="fw-bold">$29.990</p>
+            </div>
+          </div>
+        </div>
+        <!-- Repite una tarjeta por cada servicio real -->
+      </div>
+    </section>
 
-  <div class="campo">
-    <label>Teléfono de Contacto</label>
-    <input type="tel" placeholder="Número de teléfono">
-  </div>
+    <!-- ============================
+         SECCIÓN 2: PROGRAMAR CITA
+         ============================ -->
+    <section id="citas" class="mb-5">
+      <h2 class="h4 mb-4 border-bottom pb-2">Sistema para Programar Citas</h2>
 
-  <div class="campo">
-    <label>Notas Adicionales</label>
-    <textarea placeholder="Instrucciones especiales, referencias del lugar, etc."></textarea>
-  </div>
+      <!-- Formulario de cita usando la rejilla de Bootstrap -->
+      <form id="citaForm" class="row g-3">
 
-  <button class="boton">Confirmar Cita</button>
-</div>
+        <!-- Fecha preferida -->
+        <div class="col-sm-6">
+          <label for="fecha-cita" class="form-label">Fecha Preferida</label>
+          <input type="date" id="fecha-cita" class="form-control">
+        </div>
 
-<h2>Información de Pago (simulado)</h2>
-<div class="formulario">
- Aqui va el form de pago
-</div>
+        <!-- Turno preferido -->
+        <div class="col-sm-6">
+          <label for="turno" class="form-label">Turno Preferido</label>
+          <select id="turno" class="form-select">
+            <option value="">Seleccione un turno</option>
+            <option value="mañana">Mañana (08:00–12:00)</option>
+            <option value="tarde">Tarde (13:00–17:00)</option>
+            <option value="noche">Noche (18:00–20:00)</option>
+          </select>
+        </div>
+
+        <!-- Horarios disponibles como botones -->
+        <div class="col-12">
+          <label class="form-label">Horarios Disponibles</label>
+          <div id="horarios" class="d-flex flex-wrap gap-2">
+            <!-- Cada botón representa un slot -->
+            <button type="button"
+                    class="btn btn-outline-primary horario-slot"
+                    data-hora="08:00">
+              08:00
+            </button>
+            <button type="button"
+                    class="btn btn-outline-primary horario-slot"
+                    data-hora="09:00">
+              09:00
+            </button>
+            <!-- Agrega el resto de los horarios -->
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="col-sm-6">
+          <label for="direccion" class="form-label">Dirección para el Servicio</label>
+          <input type="text"
+                 id="direccion"
+                 class="form-control"
+                 placeholder="Calle, número, comuna">
+        </div>
+
+        <!-- Teléfono -->
+        <div class="col-sm-6">
+          <label for="telefono" class="form-label">Teléfono de Contacto</label>
+          <input type="tel"
+                 id="telefono"
+                 class="form-control"
+                 placeholder="+56 9 1234 5678">
+        </div>
+
+        <!-- Notas adicionales -->
+        <div class="col-12">
+          <label for="notas" class="form-label">Notas Adicionales</label>
+          <textarea id="notas"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Instrucciones especiales..."></textarea>
+        </div>
+
+        <!-- Botón de envío -->
+        <div class="col-12 text-end">
+          <button type="submit" class="btn btn-success">
+            Confirmar Cita
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============================
+         SECCIÓN 3: PAGO SIMULADO
+         ============================ -->
+    <section id="pago" class="mb-5">
+      <h2 class="h4 mb-4 border-bottom pb-2">Información de Pago (Simulado)</h2>
+      <div class="card p-4 shadow-sm">
+        <form id="pagoForm" class="row g-3">
+          <div class="col-sm-6">
+            <label for="titular" class="form-label">Titular de la Tarjeta</label>
+            <input type="text" id="titular" class="form-control" placeholder="Nombre completo">
+          </div>
+          <div class="col-sm-6">
+            <label for="numero" class="form-label">Número de Tarjeta</label>
+            <input type="text" id="numero" class="form-control" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="col-4 col-sm-3">
+            <label for="expiracion" class="form-label">Expiración (MM/AA)</label>
+            <input type="text" id="expiracion" class="form-control" placeholder="MM/AA">
+          </div>
+          <div class="col-4 col-sm-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input type="text" id="cvv" class="form-control" placeholder="123">
+          </div>
+          <div class="col-4 col-sm-6 d-grid">
+            <button type="submit" class="btn btn-primary">
+              Pagar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 1) Bootstrap Bundle (JS + Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- 2) Lógica de selección de horario -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
