@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>AutoFix</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFix - Reparación de Vehículos a Domicilio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <h1>AutoFix-Reparación de Vehículos a Domicilio</h1>
+  <div class = "todo">
+     <h1>AutoFix-Reparación de Vehículos a Domicilio</h1>
     <h3>Servicios y Precios</h3>
     <div class="servicios">
         <div class="card">
@@ -23,8 +26,134 @@
             <p><strong>Diagnóstico eléctrico</strong><br>Precio: $600 MXN</p>
         </div>
     </div>
+  <!--Formulario-->
+  <h2>Solicitar Reparación</h2>
+
+  <div class="formulario">
+    <form id="form-reparacion">
+      <div class="campo">
+        <label for="nombre">Nombre del Cliente</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+      </div>
+
+      <div class="campo">
+        <label for="tipo">Tipo de Reparación</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecciona un servicio</option>
+          <option value="cambio-aceite">Cambio de aceite</option>
+          <option value="revision-frenos">Revisión de frenos</option>
+          <option value="diagnostico-electrico">Diagnóstico eléctrico</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="descripcion">Descripción del problema</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Describe el problema o los síntomas del vehículo"
+          required></textarea>
+      </div>
+
+      <button type="submit" class="boton">Enviar Solicitud</button>
+    </form>
+  </div>
+  <!--Aquí termina el formulario-->
+
+  <div class="citas-section">
+    <h2>Sistema para Programar Citas</h2>
+
+  <div class="fecha-hora">
+    <div class="campo">
+      <label>Fecha Preferida</label>
+      <input type="date" id="fecha-cita">
+    </div>
+    <div class="campo">
+      <label>Turno Preferido</label>
+      <select id="turno">
+        <option value="">Seleccione un turno</option>
+        <option value="mañana">Mañana (8:00 - 12:00)</option>
+        <option value="tarde">Tarde (13:00 - 17:00)</option>
+        <option value="noche">Noche (18:00 - 20:00)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="campo">
+    <label>Horarios Disponibles</label>
+    <div class="horarios-disponibles" id="horarios">
+      <div class="horario-slot" data-hora="08:00">08:00</div>
+      <div class="horario-slot" data-hora="09:00">09:00</div>
+      <div class="horario-slot" data-hora="10:00">10:00</div>
+      <div class="horario-slot" data-hora="11:00">11:00</div>
+      <div class="horario-slot" data-hora="13:00">13:00</div>
+      <div class="horario-slot" data-hora="14:00">14:00</div>
+      <div class="horario-slot" data-hora="15:00">15:00</div>
+      <div class="horario-slot" data-hora="16:00">16:00</div>
+      <div class="horario-slot" data-hora="18:00">18:00</div>
+      <div class="horario-slot" data-hora="19:00">19:00</div>
+    </div>
+  </div>
+
+  <div class="campo">
+    <label>Dirección para el Servicio</label>
+    <input type="text" placeholder="Ingrese la dirección donde se realizará el servicio">
+  </div>
+
+  <div class="campo">
+    <label>Teléfono de Contacto</label>
+    <input type="tel" placeholder="Número de teléfono">
+  </div>
+
+  <div class="campo">
+    <label>Notas Adicionales</label>
+    <textarea placeholder="Instrucciones especiales, referencias del lugar, etc."></textarea>
+  </div>
+
+  <button class="boton">Confirmar Cita</button>
+</div>
 
 
+    <!-- ============================
+         SECCIÓN 3: PAGO SIMULADO
+         ============================ -->
+    <section id="pago" class="mb-5">
+      <h2 class="h4 mb-4 border-bottom pb-2">Información de Pago (Simulado)</h2>
+      <div >
+        <form id="pagoForm" class="row g-3">
+          <div class="col-sm-6">
+            <label for="titular" class="form-label">Titular de la Tarjeta</label>
+            <input type="text" id="titular" class="form-control" placeholder="Nombre completo">
+          </div>
+          <div class="col-sm-6">
+            <label for="numero" class="form-label">Número de Tarjeta</label>
+            <input type="text" id="numero" class="form-control" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="col-4 col-sm-3">
+            <label for="expiracion" class="form-label">Expiración (MM/AA)</label>
+            <input type="text" id="expiracion" class="form-control" placeholder="MM/AA">
+          </div>
+          <div class="col-4 col-sm-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input type="text" id="cvv" class="form-control" placeholder="123">
+          </div>
+          <div class="col-4 col-sm-6 d-grid">
+            <button type="submit" class="boton">
+              Pagar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
 
+  </main>
+
+
+  </div>
+   
+
+  <!-- 1) Bootstrap Bundle (JS + Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- 2) Lógica de selección de horario -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
