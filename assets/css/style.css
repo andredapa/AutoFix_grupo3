@@ -5,6 +5,13 @@ body {
     padding: 20px;
     background-color: #f9f9f9;
 }
+.todo{
+
+    background:white;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 30px 0;
+}
 
 h1 {
     text-align: center;
@@ -19,6 +26,7 @@ h2 {
     padding-bottom: 10px;
 }
 
+
 .servicios {
     display: flex;
     gap: 20px;
@@ -26,7 +34,6 @@ h2 {
     justify-content: center;
     margin-top: 20px;
 }
-
 .card {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -40,7 +47,6 @@ h2 {
     height: 100px;
     object-fit: contain;
 }
-
 
 .formulario {
     background: white;
@@ -57,9 +63,7 @@ label {
     color: #333;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -89,15 +93,14 @@ textarea {
 
 /* Estilo específico para la sección de citas */
 .citas-section {
-    background: #e8f4fd;
-    border: 2px solid #3498db;
+    background:white;
     border-radius: 5px;
     padding: 30px;
     margin: 30px 0;
 }
 
 .citas-section h2 {
-    color: #3498db;
+    color: #090a0a;
     border-bottom: 2px solid #3498db;
 }
 
@@ -147,36 +150,4 @@ textarea {
     .fecha-hora {
         flex-direction: column;
     }
-}
-
-/* Estilo del formulario de solicitud de reparación */
-#form-reparacion {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#form-reparacion .campo {
-    display: flex;
-    flex-direction: column;
-}
-
-#form-reparacion label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-#form-reparacion input,
-#form-reparacion select,
-#form-reparacion textarea {
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-#form-reparacion button {
-    align-self: flex-start;
 }
